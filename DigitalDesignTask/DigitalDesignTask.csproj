@@ -13,4 +13,8 @@
       </None>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\TextParser\TextParser.csproj" />
+    </ItemGroup>
+
 </Project>

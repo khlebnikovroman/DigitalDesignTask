@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalDesignTask", "DigitalDesignTask\DigitalDesignTask.csproj", "{B1F495EC-2C08-4661-A415-A4EAAAB0437E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextParser", "TextParser\TextParser.csproj", "{32D6140C-BAE6-4B47-8068-5752291542E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{B1F495EC-2C08-4661-A415-A4EAAAB0437E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1F495EC-2C08-4661-A415-A4EAAAB0437E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1F495EC-2C08-4661-A415-A4EAAAB0437E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32D6140C-BAE6-4B47-8068-5752291542E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32D6140C-BAE6-4B47-8068-5752291542E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32D6140C-BAE6-4B47-8068-5752291542E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32D6140C-BAE6-4B47-8068-5752291542E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,8 +1,8 @@
-﻿namespace DigitalDesignTask;
+﻿namespace TextParser;
 
 public static class TextParser
 {
-    public static Dictionary<string, int> GetStringsFrequency(string path)
+    private static Dictionary<string, int> GetStringsFrequency(string path)
     {
         var stringFrequency = new Dictionary<string, int>();
         using var fileStream = new StreamReader(path);
@@ -56,15 +56,5 @@ public static class TextParser
         
         return true;
     }
-    
 
-    public static void PrintFrequencyToFile(Dictionary<string, int> frequency, string path)
-    {
-        using var writer = new StreamWriter(path);
-
-        foreach (var i in frequency)
-        {
-            writer.WriteLine($"{i.Key} {i.Value}");
-        }
-    }
 }
