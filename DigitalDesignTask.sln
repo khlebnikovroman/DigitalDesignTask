@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextParser", "TextParser\Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmark", "Benchmark\Benchmark.csproj", "{749FEA54-4413-423E-A9C4-FB5917844BC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{ECD8FF81-B2C5-40E7-8531-95BFC61EE6B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{749FEA54-4413-423E-A9C4-FB5917844BC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{749FEA54-4413-423E-A9C4-FB5917844BC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{749FEA54-4413-423E-A9C4-FB5917844BC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECD8FF81-B2C5-40E7-8531-95BFC61EE6B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECD8FF81-B2C5-40E7-8531-95BFC61EE6B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECD8FF81-B2C5-40E7-8531-95BFC61EE6B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECD8FF81-B2C5-40E7-8531-95BFC61EE6B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
