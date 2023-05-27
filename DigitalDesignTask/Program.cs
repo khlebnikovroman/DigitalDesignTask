@@ -17,6 +17,24 @@ public static class Program
             {"Parallel", TextParser.TextParser.GetWordFrequencyParallel},
             {"Thread", TextParser.TextParser.GetWordFrequencyThread},
             {"ThreadPool", TextParser.TextParser.GetWordFrequencyThreadPool},
+            {"ParallelWebApi", text =>
+            {
+                try
+                {
+                    var client = new WebApiClient.WordFrequencyClient("https://localhost:7215/", new HttpClient());
+
+                    return client.WordFrequencyAsync(text).Result;
+                }
+                catch (AggregateException e)
+                {
+                    Console.WriteLine("Server error, make sure the server is running");
+
+                    return null;
+                }
+                
+            }
+                
+            }
         };
 
         var sw = new Stopwatch();
@@ -25,8 +43,19 @@ public static class Program
         {
             sw.Restart();
             var frequency = method.Value(text);
+            
+
+            if (frequency is null)
+            {
+                Console.WriteLine($"{method.Key} returned null");
+                continue;
+            }
+
+            if (method.Key!="ParallelWebApi")
+            {
+                frequency = TextParser.TextParser.SortWordFrequency(frequency);
+            }
             sw.Stop();
-            frequency = TextParser.TextParser.SortWordFrequency(frequency);
             PrintFrequencyToFile(frequency, $"out{method.Key}.txt");
             Console.WriteLine($"{method.Key}: {sw.ElapsedMilliseconds} ms.");
         }
