@@ -1,0 +1,183 @@
+body {
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+}
+.color1{
+    background-color: #C4DFDF;
+}
+
+.color2{
+    background-color: #D2E9E9;
+}
+
+.color3{
+    background-color: #E3F4F4;
+
+}
+
+.color4{
+    background-color: #F8F6F4;
+
+}
+
+header {
+
+    padding: 20px;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    main {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    main {
+        padding-left: 30px;
+        padding-right: 30px;
+        font-size: 35px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    main {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+@media (min-width: 1025px) {
+    main {
+
+        padding-left: 15vh;
+        padding-right: 15vh;
+        font-size: 25px;
+    }
+}
+
+.column {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.row {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image {
+    flex: 1;
+    width: auto;
+    height: 15em;
+    border-radius: 5%;
+
+    margin-right: 10px;
+}
+
+.input-label{
+    margin-top: 15px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.text {
+    padding: 25px;
+    min-width: 35em;
+    flex: 2;
+}
+
+.shadow{
+    border-radius: 25px;
+    margin: 25px;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.14);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.14);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.14);
+}
+
+footer {
+    padding: 10px;
+    text-align: center;
+}
+
+.image-container {
+    max-height: 400px;
+    padding: 25px 25px 0 25px;
+    align-self: center;
+    display: flex;
+    align-content: center;
+}
+
+.form-container {
+    padding: 25px;
+    /*margin: 25px;*/
+    /*font-size: 1.5vmax;*/
+}
+
+.form-question {
+    margin-bottom: 20px;
+}
+
+.form-question label {
+    align-content: center;
+    margin-bottom: 5px;
+}
+
+
+.input-label input[type="checkbox"],input[type="radio"] {
+    margin: 10px;
+    width: 2em;
+    height: 2em;
+}
+
+textarea{
+    padding: 1em;
+    font-size: 1em;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="date"],
+select{
+    padding: 5px;
+
+    font-size: 1em;
+}
+
+
+.form-container input[type="submit"] {
+    font-size: 1.3em;
+    padding: 10px 20px;
+    margin: 10px;
+
+    border: none;
+    cursor: pointer;
+}
+.grow-wrap {
+    display: grid;
+}
+.grow-wrap::after {
+    content: attr(data-replicated-value) " ";
+    white-space: pre-wrap;
+    visibility: hidden;
+}
+.grow-wrap > textarea {
+    resize: none;
+    overflow: hidden;
+}
+.grow-wrap > textarea,
+.grow-wrap::after {
+    border: 1px solid black;
+    padding: 0.5rem;
+
+    font-size: 1em;
+    grid-area: 1 / 1 / 2 / 2;
+}
