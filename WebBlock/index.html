@@ -10,7 +10,15 @@
 </head>
 <body class="color3">
 <header class="color1">
-    <h1>Картина "Спортсмены" Малевича</h1>
+    <div style="display: flex; justify-content: center">
+        <div id="currencyColumn" class="column" style="justify-self: start; margin-right: 30px" >
+            <button id="showCurrencyButton" class="shadow" style="font-size: 1.3em" >Показать валюту</button>
+            <h3 id="eurCurrency" style="display: none;"></h3>
+            <h3 id="usdCurrency" style="display: none;"></h3>
+        </div>
+        <h1 >Картина "Спортсмены" Малевича</h1>
+    </div>
+    
 </header>
 
 <main class="column" style="max-width: 100vw">
@@ -131,7 +139,7 @@
              style="align-items: center; justify-content:  center; min-width: 25em;  align-content: flex-start">
             <div class="shadow color4 column form-container form-question" style="max-width: 100vw">
                 <h2>Форма отправки запроса к API</h2>
-                <form id="send-to-api-form">
+                <form id="sendToApiForm">
                     <label for="api-text-area">Введите текст</label>
                     <div class="grow-wrap">
                         <textarea id="api-text-area" name="api-text-area"
@@ -158,7 +166,7 @@
 </footer>
 </body>
 <script>
-    let form = document.getElementById("send-to-api-form");
+   
 
     function submitForm(event) {
         event.preventDefault();
@@ -181,8 +189,26 @@
                 answerArea.oninput()
             })
     }
-
+    function setCurrency(){
+        fetch("https://www.cbr-xml-daily.ru/daily_json.js",{
+            method: "GET"
+        })
+            .then(res=>res.json())
+            .then(res=>{
+                let eurValue = res["Valute"]["EUR"]["Value"];
+                let usdValue = res["Valute"]["USD"]["Value"];
+                document.getElementById("eurCurrency").innerHTML = "EUR: " + eurValue + " р.";
+                document.getElementById("usdCurrency").innerHTML = "USD: " + usdValue + " р.";
+                document.getElementById("showCurrencyButton").style.display = "none";
+                document.getElementById("eurCurrency").style.display = "block";
+                document.getElementById("usdCurrency").style.display = "block";
+            })
+    }
+    let button = document.getElementById("showCurrencyButton");
+    button.addEventListener('click', setCurrency)
+    let form = document.getElementById("sendToApiForm");
     form.addEventListener('submit', submitForm);
+    
 
 </script>
 </html>
