@@ -176,7 +176,6 @@
             body: JSON.stringify(text),
             headers: new Headers({'content-type': 'application/json'})
         })
-        
         let data = await res.json()
         document.getElementById("answer-block").style.display = "flex"
         const answerArea = document.getElementById("api-text-area-answer");
@@ -190,13 +189,13 @@
     async function setCurrency() {
         let res = await fetch("https://www.cbr-xml-daily.ru/daily_json.js", {method: "GET"})
         res = await res.json();
-            let eurValue = res["Valute"]["EUR"]["Value"];
-            let usdValue = res["Valute"]["USD"]["Value"];
-            document.getElementById("eurCurrency").innerHTML = "EUR: " + eurValue + " р.";
-            document.getElementById("usdCurrency").innerHTML = "USD: " + usdValue + " р.";
-            document.getElementById("showCurrencyButton").style.display = "none";
-            document.getElementById("eurCurrency").style.display = "block";
-            document.getElementById("usdCurrency").style.display = "block";
+        let eurValue = res["Valute"]["EUR"]["Value"];
+        let usdValue = res["Valute"]["USD"]["Value"];
+        document.getElementById("eurCurrency").innerHTML = "EUR: " + eurValue + " р.";
+        document.getElementById("usdCurrency").innerHTML = "USD: " + usdValue + " р.";
+        document.getElementById("showCurrencyButton").style.display = "none";
+        document.getElementById("eurCurrency").style.display = "block";
+        document.getElementById("usdCurrency").style.display = "block";
     }
     let button = document.getElementById("showCurrencyButton");
     button.addEventListener('click', setCurrency)
