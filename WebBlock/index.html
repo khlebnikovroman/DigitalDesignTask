@@ -2,30 +2,30 @@
 <html>
 <head>
     <title>Описание картины "Спортсмены" Малевича</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="style.css" rel="stylesheet">
 
 </head>
 <body class="color3">
 <header class="color1">
     <div style="display: flex; justify-content: center">
-        <div id="currencyColumn" class="column" style="justify-self: start; margin-right: 30px" >
-            <button id="showCurrencyButton" class="shadow" style="font-size: 1.3em" >Показать валюту</button>
+        <div class="column" id="currencyColumn" style="justify-self: start; margin-right: 30px">
+            <button class="shadow" id="showCurrencyButton" style="font-size: 1.3em">Показать валюту</button>
             <h3 id="eurCurrency" style="display: none;"></h3>
             <h3 id="usdCurrency" style="display: none;"></h3>
         </div>
-        <h1 >Картина "Спортсмены" Малевича</h1>
+        <h1>Картина "Спортсмены" Малевича</h1>
     </div>
-    
+
 </header>
 
 <main class="column" style="max-width: 100vw">
     <div class="shadow color4 row">
         <div class="image-container">
-            <img class="shadow image" src="https://s5o.ru/storage/simple/ru/edt/54/00/56/bb/rue0b90177331.jpg"
-                 alt="Спортсмены">
+            <img alt="Спортсмены" class="shadow image"
+                 src="https://s5o.ru/storage/simple/ru/edt/54/00/56/bb/rue0b90177331.jpg">
         </div>
         <div class="column text">
             <div>
@@ -54,86 +54,7 @@
 
     <div class="column">
         <div class="shadow color4 column form-container" style="min-width: 25em; flex-basis: content; ">
-            <h2>Форма опроса</h2>
-            <form action="/submit" method="POST">
-                <div class="column form-question">
-                    <h3>Общие вопросы</h3>
-                    <label for="name">Ваше имя:</label>
-                    <input type="text" id="name" name="name" required>
-
-                    <label for="age">Ваш возраст:</label>
-                    <input type="number" id="age" name="age" required>
-
-                    <label for="email">Ваш email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="column form-question">
-                    <h3>Вопросы по картине</h3>
-                    <label for="like_dislike">Как вам нравится картина "Спортсмены" Малевича?</label>
-                    <select id="like_dislike" name="like_dislike" required>
-                        <option value="">Выберите вариант</option>
-                        <option value="like">Нравится</option>
-                        <option value="dislike">Не нравится</option>
-                    </select>
-
-                    <label for="description">Опишите свои впечатления от картины:</label>
-                    <div class="grow-wrap">
-                        <textarea id="description" name="description" required
-                                  oninput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
-                    </div>
-
-                    <label for="rating">Поставьте оценку от 1 до 10:</label>
-                    <input type="number" id="rating" name="rating" min="1" max="10" required>
-                </div>
-                <div class="column form-question">
-                    <h3> Какая из перечисленных ниже характеристик наиболее точно описывает ваше впечатление от картины
-                        "Спортсмены"?</h3>
-
-                    <div class="row input-label">
-                        <input id="experimental" name="question5" type="radio" value="Экспериментальная">
-                        <label for="experimental"> Экспериментальная</label>
-                    </div>
-                    <div class="row input-label">
-                        <input id="symbolic" name="question5" type="radio" value="Символичная">
-                        <label for="symbolic"> Символичная</label>
-                    </div>
-                    <div class="row input-label">
-                        <input id="minimalistic" name="question5" type="radio" value="Минималистичная">
-                        <label for="minimalistic"> Минималистичная</label>
-                    </div>
-                    <div class="row input-label">
-                        <input id="abstract" name="question5" type="radio" value="Абстрактная">
-                        <label for="abstract"> Абстрактная</label>
-                    </div>
-                    <div class="row input-label">
-                        <input id="innovation" name="question5" type="radio" value="Инновационная">
-                        <label for="innovation"> Инновационная</label>
-                    </div>
-
-
-                </div>
-                <div class="column form-question">
-                    <h3>Дополнительные вопросы</h3>
-
-                    <label for="birthday">Ваша дата рождения:</label>
-                    <input type="date" id="birthday" name="birthday" required>
-
-
-                    <div class="row input-label">
-                        <label for="newsletter">Подписаться на нашу рассылку?</label>
-                        <input type="checkbox" id="newsletter" name="newsletter">
-                    </div>
-
-                    <div class="row input-label">
-                        <label for="agreement">Согласны ли вы с условиями?</label>
-                        <input type="checkbox" id="agreement" name="agreement" required>
-                    </div>
-                </div>
-
-
-                <input class="shadow color3" type="submit" value="Отправить">
-            </form>
+            <div id="formRoot"></div>
         </div>
         <div class="row"
              style="align-items: center; justify-content:  center; min-width: 25em;  align-content: flex-start">
@@ -148,12 +69,12 @@
                     <input class="shadow color3" type="submit" value="Отправить">
                 </form>
             </div>
-            <div id="answer-block" style="display: none;"
-                 class="shadow color4 column form-container form-question">
+            <div class="shadow color4 column form-container form-question" id="answer-block"
+                 style="display: none;">
                 <h2>Ответ</h2>
                 <div class="grow-wrap">
-                    <textarea id="api-text-area-answer" style="max-width: 100%" readonly="readonly"
-                              oninput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
+                    <textarea id="api-text-area-answer" oninput="this.parentNode.dataset.replicatedValue = this.value" readonly="readonly"
+                              style="max-width: 100%"></textarea>
                 </div>
             </div>
         </div>
@@ -164,9 +85,11 @@
 <footer class="color1">
     <h3>© 2023 Роман Хлебников</h3>
 </footer>
-</body>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
 <script>
-   
+
 
     async function submitForm(event) {
         event.preventDefault();
@@ -184,8 +107,9 @@
             answerArea.value += key + " : " + data[key] + "\n"
         }
         answerArea.oninput()
-            
+
     }
+
     async function setCurrency() {
         let res = await fetch("https://www.cbr-xml-daily.ru/daily_json.js", {method: "GET"})
         res = await res.json();
@@ -197,12 +121,209 @@
         document.getElementById("eurCurrency").style.display = "block";
         document.getElementById("usdCurrency").style.display = "block";
     }
+
     let button = document.getElementById("showCurrencyButton");
     button.addEventListener('click', setCurrency)
     let form = document.getElementById("sendToApiForm");
     form.addEventListener('submit', submitForm);
-    
+
 
 </script>
+<script type="text/babel">
+    class FormComponent extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                name: '',
+                age: '',
+                email: '',
+                likeDislike: '',
+                description: '',
+                rating: '',
+                question5: '',
+                birthday: '',
+                newsletter: false,
+                agreement: false,
+            };
+        }
+
+        handleChange = (event) => {
+            const {name, value, type, checked} = event.target;
+            if (type === 'checkbox') {
+                this.setState({[name]: checked});
+            } else {
+                this.setState({[name]: value});
+            }
+        };
+
+        handleSubmit = (event) => {
+            event.preventDefault();
+            alert(JSON.stringify(this.state))
+            console.log(this.state)
+        };
+
+        render() {
+            const {
+                name,
+                age,
+                email,
+                likeDislike,
+                description,
+                rating,
+                question5,
+                birthday,
+                newsletter,
+                agreement,
+            } = this.state;
+            const characteristics = [
+                {id: 'experimental', value: 'Экспериментальная', label: 'Экспериментальная'},
+                {id: 'symbolic', value: 'Символичная', label: 'Символичная'},
+                {id: 'minimalistic', value: 'Минималистичная', label: 'Минималистичная'},
+                {id: 'abstract', value: 'Абстрактная', label: 'Абстрактная'},
+                {id: 'innovation', value: 'Инновационная', label: 'Инновационная'},
+            ];
+            const likeDislikeOptions = [
+                { value: "", label: "Выберите вариант" },
+                { value: "like", label: "Нравится" },
+                { value: "dislike", label: "Не нравится" },
+            ];
+            const additionalQuestions = [
+                { id: "newsletter", label: "Подписаться на нашу рассылку?" },
+                { id: "agreement", label: "Согласны ли вы с условиями?" },
+            ];
+
+            return (
+                <div>
+                    <h2>Форма опроса</h2>
+                    <form  onSubmit={this.handleSubmit}>
+                        <div className="column form-question">
+                            <h3>Общие вопросы</h3>
+                            <label htmlFor="name">Ваше имя:</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                value={name}
+                                onChange={this.handleChange}
+                                required
+                            />
+
+                            <label htmlFor="age">Ваш возраст:</label>
+                            <input
+                                type="number"
+                                id="age"
+                                name="age"
+                                value={age}
+                                onChange={this.handleChange}
+                                required
+                            />
+
+                            <label htmlFor="email">Ваш email:</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                value={email}
+                                onChange={this.handleChange}
+                                required
+                            />
+                        </div>
+
+                        <div className="column form-question">
+                            <h3>Вопросы по картине</h3>
+                            <label htmlFor="like_dislike">Как вам нравится картина "Спортсмены" Малевича?</label>
+                            <select
+                                id="like_dislike"
+                                name="likeDislike"
+                                value={likeDislike}
+                                onChange={this.handleChange}
+                                required
+                            >
+                                {likeDislikeOptions.map((option) => (
+                                    <option value={option.value} key={option.value}>
+                                        {option.label}
+                                    </option>
+                                ))}
+                            </select>
+
+                            <label htmlFor="description">Опишите свои впечатления от картины:</label>
+                            <div className="grow-wrap">
+                            <textarea
+                                id="description"
+                                name="description"
+                                value={description}
+                                onChange={this.handleChange}
+                                required
+                            ></textarea>
+                            </div>
+
+                            <label htmlFor="rating">Поставьте оценку от 1 до 10:</label>
+                            <input
+                                type="number"
+                                id="rating"
+                                name="rating"
+                                min="1"
+                                max="10"
+                                value={rating}
+                                onChange={this.handleChange}
+                                required
+                            />
+                        </div>
+                        <div className="column form-question">
+                            <h3> Какая из перечисленных ниже характеристик наиболее точно описывает ваше впечатление от
+                                картины "Спортсмены"?</h3>
+
+                            {characteristics.map((characteristic) => (
+                                <div className="row input-label" key={characteristic.id}>
+                                    <input
+                                        id={characteristic.id}
+                                        name="question5"
+                                        type="radio"
+                                        value={characteristic.value}
+                                        checked={question5 === characteristic.value}
+                                        onChange={this.handleChange}
+                                    />
+                                    <label htmlFor={characteristic.id}>{characteristic.label}</label>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="column form-question">
+                            <h3>Дополнительные вопросы</h3>
+
+                            <label htmlFor="birthday">Ваша дата рождения:</label>
+                            <input
+                                type="date"
+                                id="birthday"
+                                name="birthday"
+                                value={birthday}
+                                onChange={this.handleChange}
+                                required
+                            />
+
+                            {additionalQuestions.map((question) => (
+                                <div className="row input-label" key={question.id}>
+                                    <input
+                                        type="checkbox"
+                                        id={question.id}
+                                        name={question.id}
+                                        checked={this.state[question.id]}
+                                        onChange={this.handleChange}
+                                    />
+                                    <label htmlFor={question.id}>{question.label}</label>
+                                </div>
+                            ))}
+                        </div>
+
+                        <input className="shadow color3" type="submit" value="Отправить"/>
+                    </form>
+                </div>
+            );
+        }
+    }
+
+    ReactDOM.render(<FormComponent/>, document.getElementById("formRoot"));
+</script>
+</body>
+
 </html>
 
